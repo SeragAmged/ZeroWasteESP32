@@ -14,13 +14,13 @@ This is the firmware for the hardware side of the **Zero Waste** ecosystem. A th
 
 ## The bigger picture: three repos, one product
 
-This repo is the hardware layer of a full-stack IoT system I built end to end: embedded firmware, a computer-vision kiosk, and a consumer mobile app.
+This repo is the hardware layer of a full-stack IoT system built as a team project: embedded firmware, a computer-vision kiosk, and a consumer mobile app. I built the firmware (this repo) and the kiosk app.
 
 | Repo | Role | Stack |
 | --- | --- | --- |
 | **`ZeroWasteESP32`** (this repo) | Bin controller: lids, drop verification, weighing | C++, PlatformIO, ESP32 |
-| **`zero_waste_iot_app`** | Kiosk app on the bin: on-device ML classifies the item, talks to this firmware | Flutter, TFLite, Firebase |
-| **`Zero-Waste-App`** | User app: QR login, points per material, cash-out, statistics | Flutter, BLoC, Dio |
+| [**`zero_waste_iot_app`**](https://github.com/SeragAmged/zero_waste_iot_app) | Kiosk app on the bin: on-device ML classifies the item, talks to this firmware | Flutter, TFLite, Firebase |
+| [**`Zero-Waste-App`**](https://github.com/Marawanemad/Zero-Waste-App) | User app (teammate's repo): QR login, points per material, cash-out, statistics | Flutter, BLoC, Dio |
 
 ```mermaid
 flowchart LR
@@ -153,9 +153,14 @@ ZeroWasteESP32/
 **Embedded systems:** C++ on ESP32, PlatformIO, GPIO and PWM, sensor interfacing (ultrasonic, HX711 ADC), servo control, timing with `millis()`.
 **Networking:** TCP server and client design, a custom lightweight protocol shared between C++ and Dart.
 **System design:** splitting one product across firmware, a vision kiosk and a mobile app, with clear interfaces between them.
-**Cross-stack delivery:** the same author owns the firmware, the on-device ML kiosk (TFLite, isolates, camera pipeline) and the Flutter user app.
+**Cross-stack delivery:** authored the firmware and the on-device ML kiosk (TFLite, isolates, camera pipeline), and integrated both with the teammate-built Flutter user app.
 **Engineering habits:** modular structure, fail-safe defaults, vendored and pinned dependencies.
 
 ---
 
-> Related repos: [`zero_waste_iot_app`](../zero_waste_iot_app) (kiosk) and [`Zero-Waste-App`](../Zero-Waste-App) (user app).
+## Author
+
+**Serag Amged**, embedded and mobile engineer.
+GitHub: [@SeragAmged](https://github.com/SeragAmged) · Email: seragamged2002@gmail.com
+
+> Related repos: [`zero_waste_iot_app`](https://github.com/SeragAmged/zero_waste_iot_app) (kiosk) and [`Zero-Waste-App`](https://github.com/Marawanemad/Zero-Waste-App) (user app).
